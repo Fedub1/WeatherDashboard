@@ -1,13 +1,29 @@
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-WHEN I open the weather dashboard
-THEN I am presented with the last searched city forecast
+# Weather Dashboard
+
+# Installation
+For this application, I developed a 5 day Weather Dashboard which allows users to enter a city and view weather information over a 5 day period.
+
+# Instructions
+
+Develop a weather dashboard with input field to search city weather data.
+
+Display current day weather data for selected city.
+
+Display 5 day weather data and include humidity, temperature, UV index and wind speed.
+
+This application uses Bootstrap, OpenWeather API,  JavaScript and JQuery.
+
+# License
+MIT
+
+# Links
+https://fedub1.github.io/WeatherDashboard/
+
+
+
+
+
+
+
+
+
