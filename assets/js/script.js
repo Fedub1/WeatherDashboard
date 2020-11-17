@@ -12,9 +12,9 @@ $("#citySearch").keypress(function(event) {
     }
 });
 
-$("searchBtn").on("click", function () {
-    $('#forecastH5').addClass('show');
-    city = $("citySearch").val();
+$("#searchBtn").on("click", function () {
+    $('#fiveDay').addClass('show');
+    city = $("#citySearch").val();
     $("#citySearch").val("");
     var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + apiKey;
 
@@ -44,7 +44,7 @@ function makeList() {
 
 }
 
-function getCurrentCondisionts(response) {
+function getCurrentConditions(response) {
 
     var tempF = (response.main.temp - 273.15) * 1.80 + 32;
     tempF = Math.floor(tempF);
@@ -54,7 +54,7 @@ function getCurrentCondisionts(response) {
     var card = $("<div>").addClass("card");
     var cardBody = $("<div>").addClass("card-body");
     var city = $("<h4>").addClass("card-title").text(response.name);
-    var cityDate = $("<h4>").addClass("card-title").text(data.toLocaleDateString('en-US'));
+    var cityDate = $("<h4>").addClass("card-title").text(date.toLocaleString('en-US'));
     var temperature = $("<p>").addClass("card-text current-temp").text("Temperature: " + tempF + " °F");
     var humidity = $("<p>").addClass("card-text current-humidity").text("Humidity: " + response.main.humidity + "%");
     var wind = $("<p>").addClass("card-text current-wind").text("Wind Speed: " + response.wind.speed + "MPH");
@@ -72,8 +72,8 @@ function getCurrentForecast() {
         method: "GET"
     }).then(function (response){
 
-   console.log(response)
-   console.log(response.dt)
+   console.log(response);
+   console.log(response.dt);
     $('#forecast').empty();
 
     var results = response.list;
@@ -91,10 +91,10 @@ function getCurrentForecast() {
             var temp = (results[i].main.temp - 273.15) * 1.80 + 32;
             var tempF = Math.floor(temp);
 
-            var card = $("<div>").addClass("card col-md-2 ml-4 bg-primary text-white");
+            var card = $("<div>").addClass("card col-md-2 md-4 bg-primary text-white");
             var cardBody = $("<div>").addClass("card-body p-3 forecastBody");
             //var city = $("<h4>").addClass("card-title").text(response.name);
-            var cityDate = $("<h4>").addClass("card-title").text(date.toLocaleDateString('en-US'));
+            var cityDate = $("<h4>").addClass("card-title").text(date.toLocaleString('en-US'));
             var temperature = $("<p>").addClass("card-text forecastTemp").text("Temperature: " + tempF + " °F");
             var humidity = $("<p>").addClass("card-text forecastHumidity").text("Humidity: " + results[i].main.humidity + "%");
            // var wind = $("<p>").addClass("card-text current-wind").text("Wind Speed: " + response.wind.speed + "MPH");
