@@ -108,4 +108,5 @@ function getCurrentForecast() {
 
     }
 
+    
 })};
